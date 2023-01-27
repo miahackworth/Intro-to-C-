@@ -1,0 +1,51 @@
+//Number guessing game 
+
+#include <iostream> //cin/cout usage
+#include <cstdlib> 
+#include <ctime> 
+
+using namespace std;
+
+int main()
+{
+	int num;
+	int guess;
+	bool isGuessed;
+
+
+	srand(time(0));
+	num = rand() % 100;
+
+	isGuessed = false;
+
+	while (!isGuessed) //while isGuessed is false...
+	{
+		cout << "Emter an integer greater "
+			<< "than or eqaul to 0 and "
+			<< "less than 100: ";
+
+		cin >> guess;
+		cout << endl;
+
+		if (guess == num)
+		{
+			cout << "You guessed the correct number"
+			<< endl;
+			isGuessed = true;
+		}
+		else if (guess < num)
+		{
+			cout << "Your guess is lower than the number."
+			<< endl;
+		}
+		else
+		{
+			cout << "Your guess is higher than the number"
+				<< endl;
+		}
+
+
+	}//end of while loop
+
+	return 0;
+}
