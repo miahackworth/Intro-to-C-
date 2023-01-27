@@ -1,0 +1,46 @@
+/****************************************************************************************************
+hackworth_homework1 <HW1.c>
+
+	Proammning assignment 1 simple c++ program
+
+	This can create a program that adds three number and outputs the sum. The program will ask the 
+	user to provide an integer vaule. Then add the user's provided number to your own two integer 
+	numbers. Then the entire math equation will be printed on the screen, including the correct
+	sum output.
+
+	Scope:
+		Generates the integer that the user selected 
+		  Any two whole numbers
+		   One variable to store the user provided integer
+
+	History:
+	 Intial Release						Mia Hackworth 2-1-2022
+	 Add Sum of Total Equation			Mia Hackworth 2-2-2022
+
+	Test Plan:
+		 Test Algorithm:
+		 1. Set values
+		 2. User enters values 
+		 3. Sum values
+
+	Expected Results:
+	Have user picka number to add to equation.
+*****************************************************************************************************/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	//Variables
+	int n1 = 4;
+	int n2 = 2;
+	int n3;
+	int sum;
+	//Users number of choice 
+	cout << "Enter number here";
+	cin >> n3;
+	//SUms of total equation
+	sum = n1 + n2 + n3;
+	cout << n1 << "+" << n2 << "+" << n3 << "=" << sum;
+	return 0;
+}
