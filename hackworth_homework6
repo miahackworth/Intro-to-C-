@@ -1,0 +1,144 @@
+/*****************************************************************************************************************************************
+<Hw6.cpp>
+<Mia Hackworth, 111-02>
+
+	Program assignment 6 creates two functions and calls them from main
+
+	This program calls rollLareDice and RunningGoals from the main functions.
+
+	Scope:
+
+	Generates a random dice roll for rollLargeDice 
+
+	For RunningGoals user enter 3 mile time
+
+	The program calculates the number of days it took the user to run under 20 minutes
+
+	If it takes more than one try, it will repeat again
+
+	History:
+
+	Inital Release							Mia Hackworth 4-06-2022
+		Put in cout for RunningGoals		Mia Hackworth 4-07-2022
+	
+Test Plan:
+	Test Alorgithm:
+	1: Set breaking points at case 3: race5kTime = race5kTime + indiviaulMile;
+	2. Enter numbers 20 and less
+	3. Enter decimal vaules 
+
+	Expected results:
+	1. Gives back a number of times it rolled to get to 21  
+
+	1. Vaules over 20 will go onto the switche statements and loop
+	2. Values 20 and less will give back 0 days of training
+
+******************************************************************************************************************************************/
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+
+int rollLargeDice(int num1);
+
+int RunningGoals();
+
+
+int main()
+{
+
+	cout << "The number of times the large dice are rolled to get the sum of 21 is --> " << rollLargeDice(21) << " rolls." << endl;
+
+	cout << "You took " << RunningGoals() << " days of training to reach your goal time." << endl;
+
+	return 0;
+}
+
+int rollLargeDice(int num1)
+{
+	int die1;
+	int die2;
+	int sum;
+	int rollCount = 0;
+	srand(time(0));
+	do
+	{
+		die1 = rand() % 12 + 1;
+		die2= rand() % 12 + 1;
+		sum = die1 + die2;
+		rollCount++;
+	}while (sum != num1);
+	return rollCount;
+}
+
+int RunningGoals()
+{
+	int daysTaken = 0;
+
+	float individualMile = 0;
+
+	float race5kTime = 0;
+
+	cout << "Welcome,this generator will tell you how many days it took you to train for the 5k " << endl;
+
+	cout << "What is your 3 mile time?" << endl;
+	cin >> race5kTime;
+
+	while (race5kTime > 20)
+	{
+
+		cout << "Your time was not under 20 mintues.." << endl;
+
+		for (int mileCount = 1; mileCount <= 3; mileCount++)
+
+		{
+			race5kTime = 0;
+
+			switch (mileCount)
+
+			{
+
+			case 1:
+				cout << "New Day!" << endl;
+				cout << "What was your first mile time?" << endl;
+
+				cin >> individualMile;
+
+				race5kTime = race5kTime + individualMile;
+
+				break;
+
+			case 2:
+
+				cout << "What was your second mile time?" << endl;
+
+				cin >> individualMile;
+
+				race5kTime = race5kTime + individualMile;
+
+				break;
+
+			case 3:
+
+				cout << "What was your third mile time?" << endl;
+
+				cin >> individualMile;
+
+				race5kTime = race5kTime + individualMile;
+
+				break;
+
+			}
+
+		}
+
+		daysTaken = daysTaken + 1;
+
+	}
+
+	return daysTaken;
+
+}
