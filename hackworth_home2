@@ -1,0 +1,47 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int pointsNumber;
+	cout << "Welcome to the NBA Legends Guessing Machine" << endl;
+	cout << "Enter the number of points scored by the NBA Legends:  ";
+	cin >> pointsNumber;
+
+	if (pointsNumber > 30000)
+	{
+		if (pointsNumber < 35000)
+		{
+			if (pointsNumber > 32500)
+			{
+				cout << "Your NBA Legends is Kobe Bryant";
+			}
+			else if (pointsNumber > 32000)
+			{
+				cout << "Your NBA Legend is Michael Jordan";
+			}
+			else
+			{
+				cout << "Your Legend is Wilt Chamberlain";
+			}
+		}
+		else
+		{
+			if (pointsNumber > 37000)
+			{
+				cout << "Your NBA Legend is Kareem Abdul-Jabbar";
+			}
+			else
+			{
+				cout << "Your Legend is Lebron James";
+			}
+		}
+	}
+	else
+	{
+		cout << "Error. All five Legends scored more points than this.";
+	}
+
+	return 0;
+}
