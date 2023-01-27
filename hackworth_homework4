@@ -1,0 +1,74 @@
+/*****************************************************************************************************************
+<Hw4.cpp>
+<Mia Hackworth, 111-02>
+
+	Program assignment 4 tracks the days of training
+
+	This program tracks how many days it takes the runner to run 3 milesin under 20 minutes. 
+
+	Scope:
+	  User enter 3 mile time
+	    The program calculates the number of days it took the user to run under 20 minutes
+		If it takes more than one try, it will repeat again
+
+	History:
+	 Inital Release						Mia Hackworth 3-14-2021
+		Added switch statement			Mia Hackworth 3-16-2021
+		Added float race5kTime			Mia Hackworth 3-16-2021
+
+Test Plan:
+	Test Alorgithm:
+	1: Set breaking points at case 3: race5kTime = race5kTime + indiviaulMile;
+	2. Enter numbers 20 and less
+
+	Expected results:
+	1. Vaules over 20 will go onto the switche statements and loop
+	2. Values 20 and less will give back 0 days of training
+
+*****************************************************************************************************************/
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int daysTaken = 0;
+	float individualMile = 0;
+	float race5kTime = 0;
+
+	cout << "Welcome,this generator will tell you how many days it took you to train for the 5k " << endl;
+	cout << "What is your 3 mile time?" << endl;
+	cin >> race5kTime;
+
+	while (race5kTime > 20)
+		race5kTime = 0;
+	{
+		for (int mileCount = 1; mileCount <= 3; mileCount++)
+		{
+			switch (mileCount)
+			{
+			case 1:
+				cout << "What was your first mile time?" << endl;
+				cin >> individualMile;
+				race5kTime = race5kTime + individualMile;
+				break;
+			case 2:
+				cout << "What was your second mile time?" << endl;
+				cin >> individualMile;
+				race5kTime = race5kTime + individualMile;
+				break;
+			case 3:
+				cout << "What was your third mile time?" << endl;
+				cin >> individualMile;
+				race5kTime = race5kTime + individualMile;
+				break;
+			}
+		}
+		daysTaken = daysTaken + 1;
+	}
+	cout << "You took " << daysTaken << " days of training to reach your goal time." << endl;
+
+	return 0;
+}
